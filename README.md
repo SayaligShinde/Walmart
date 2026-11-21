@@ -2,34 +2,49 @@
 
 ## Project Overview
 
-This project focuses on analyzing Walmart sales data to identify business trends, evaluate sales performance, and generate actionable insights.
+This project focuses on analyzing Walmart sales data to identify business trends, evaluate sales performance, and generate meaningful business insights.
 
-The analysis was carried out using **Google Colab, SQLite, and Power BI**. Google Colab was used for data exploration and preprocessing, SQLite for querying and analyzing the data, and Power BI for creating interactive dashboards and visualizing key business metrics.
+The project follows an end-to-end data analytics workflow using **Google Colab, Python, SQLite, and Power BI**.
+
+- **Google Colab:** Data exploration and cleaning
+- **SQLite:** SQL queries and business analysis
+- **Power BI:** Interactive dashboards and data visualization
+
+The objective is to transform raw retail sales data into meaningful insights that can support business decision-making.
 
 ## Project Objectives
 
 - Analyze overall sales and transaction performance.
 - Identify top-performing and low-performing product categories.
-- Understand customer ratings across different product categories.
+- Understand customer ratings across product categories.
 - Analyze customer payment preferences and transaction values.
 - Evaluate branch-level and city-level sales performance.
+- Identify sales trends over different time periods.
 - Develop interactive dashboards to communicate business insights.
 
 ## Tools & Technologies
 
-| Tool | Purpose |
+| Tool / Technology | Purpose |
 |---|---|
-| Google Colab | Data exploration, cleaning, and preprocessing |
-| SQLite | SQL queries and business data analysis |
-| Power BI | Interactive dashboards and data visualization |
-| Python | Data handling and preprocessing in Google Colab |
+| Google Colab | Data exploration and preprocessing |
+| Python | Data handling and preprocessing |
 | Pandas | Data manipulation and analysis |
+| SQLite | SQL queries and business analysis |
+| Power BI | Interactive dashboards and visualization |
 
 ## Dataset Overview
 
-The project uses the `walmart_cleaned` dataset, containing **9,969 transactions** across **100 branches**.
+The project uses Walmart sales data containing **9,969 transactions across 100 branches** after data cleaning.
 
-Important columns include:
+### Dataset Source
+
+The original dataset was downloaded from Kaggle:
+
+**[Walmart 10K Sales Datasets – Kaggle](https://www.kaggle.com/datasets/najir0123/walmart-10k-sales-datasets)**
+
+The original dataset (`Walmart.csv`) was imported into Google Colab for data exploration, cleaning, and preprocessing. The cleaned dataset (`walmart_cleaned.csv`) was then used for SQL analysis and Power BI dashboard development.
+
+### Important Dataset Columns
 
 - `invoice_id`
 - `Branch`
@@ -46,17 +61,19 @@ Important columns include:
 
 ### 1. Data Exploration & Cleaning – Google Colab
 
-- Imported and inspected the Walmart sales dataset.
-- Explored the dataset structure and data types.
+- Imported and inspected the original Walmart sales dataset.
+- Explored dataset structure, columns, and data types.
 - Checked for missing values and duplicate records.
 - Performed data cleaning and preprocessing.
-- Prepared the cleaned dataset for SQL analysis.
+- Prepared the cleaned dataset for further analysis.
+- Exported the cleaned dataset for use in SQLite and Power BI.
 
 ### 2. Data Analysis – SQLite
 
 Used SQLite to write SQL queries and extract meaningful business insights.
 
-Analysis included:
+The analysis included:
+
 - Total sales and transaction analysis.
 - Sales performance by product category.
 - Average customer ratings by category.
@@ -64,19 +81,19 @@ Analysis included:
 - Average transaction value by payment method.
 - Yearly and monthly sales trends.
 - Branch-level and city-level sales performance.
-- Top and bottom-performing branches.
+- Identification of top and bottom-performing branches.
 
 ### 3. Dashboard Development – Power BI
 
-Imported the cleaned dataset into Power BI and developed a three-page interactive dashboard.
+Imported the cleaned dataset into Power BI and developed a **three-page interactive dashboard** to visualize key performance indicators and business insights.
 
 ## Dashboard Pages
 
 ### Page 1 – Sales Overview
 
-Provides a high-level overview of Walmart's sales performance.
+Provides a high-level overview of Walmart's overall sales performance.
 
-**Key Performance Indicators:**
+**Key Performance Indicators (KPIs):**
 - Total Sales
 - Total Transactions
 - Total Quantity Sold
@@ -88,6 +105,8 @@ Provides a high-level overview of Walmart's sales performance.
 - Annual Sales Overview
 - Transactions by Payment Method
 
+![Sales Overview](Sales_Overview.png)
+
 ### Page 2 – Product & Payment Analysis
 
 Focuses on product category performance, customer satisfaction, and payment preferences.
@@ -98,11 +117,13 @@ Focuses on product category performance, customer satisfaction, and payment pref
 - Average Transaction Value by Payment Method
 - Sales by Product Category
 
+![Product & Payment Analysis](Product_Payment_Analysis.png)
+
 ### Page 3 – Store Performance Analysis
 
 Evaluates sales performance across Walmart branches and cities.
 
-**Key Performance Indicators:**
+**Key Performance Indicators (KPIs):**
 - Total Stores
 - Highest Store Sales
 - Lowest Store Sales
@@ -115,55 +136,72 @@ Evaluates sales performance across Walmart branches and cities.
 - Branch Sales vs Transaction Volume
 - Branch Contribution to Total Sales
 
+![Store Performance Analysis](Store_Performance_Analysis.png)
+
 ## Key Business Insights
 
 - Total sales reached approximately **1.21 million** across 9,969 transactions.
 - A total of **23,483 units** were sold across 100 branches.
 - Fashion Accessories and Home & Lifestyle generated the highest sales among product categories.
-- Cash payments had the highest average transaction value.
+- Cash payments had the highest average transaction value among the payment methods.
 - Food & Beverages recorded the highest average customer rating.
 - Branch-level analysis revealed differences in sales performance across locations.
 
 ## Interactive Dashboard Features
 
-The Power BI report includes slicers that allow users to explore the data dynamically by:
+The Power BI dashboard includes interactive slicers that allow users to explore the data dynamically by:
 
 - Year
 - Payment Method
 - Product Category
 - City
 
+These filters help users compare sales performance across different business dimensions.
+
 ## Repository Structure
 
 ```text
-Walmart-Sales-Analysis/
+Walmart/
 │
-├── Dataset/
-│   └── walmart_cleaned.csv
+├── Walmart.csv
+├── walmart_cleaned.csv
 │
-├── Google_Colab/
-│   └── Walmart_Sales_Analysis.ipynb
+├── Walmart_Sales.ipynb
 │
-├── SQLite/
-│   └── SQL_Queries.sql
+├── Walmart_Sales.db
 │
-├── PowerBI/
-│   └── Walmart_Sales_Analysis.pbix
+├── Walmart_Dashboard.pbix
 │
-├── Screenshots/
-│   ├── Sales_Overview.png
-│   ├── Product_Payment_Analysis.png
-│   └── Store_Performance_Analysis.png
+├── Sales_Overview.png
+├── Product_Payment_Analysis.png
+├── Store_Performance_Analysis.png
 │
 └── README.md
 ```
 
 ## Conclusion
 
-This project demonstrates an end-to-end data analytics workflow, from data exploration and cleaning to SQL-based analysis and interactive dashboard development.
+This project demonstrates an end-to-end data analytics workflow, starting from raw data exploration and cleaning to SQL-based analysis and interactive dashboard development.
 
-By combining Google Colab, SQLite, and Power BI, the project transforms raw retail sales data into meaningful business insights and visual reports.
+By combining Google Colab, SQLite, and Power BI, the project transforms retail sales data into meaningful business insights and visual reports.
+
+Through this project, I strengthened my skills in:
+
+- Data Cleaning and Preprocessing
+- Exploratory Data Analysis (EDA)
+- SQL Querying and Data Analysis
+- Data Visualization
+- Business Intelligence
+- Dashboard Development
+
+## Dataset Credit
+
+The original dataset is sourced from:
+
+[Najir0123 – Walmart 10K Sales Datasets on Kaggle](https://www.kaggle.com/datasets/najir0123/walmart-10k-sales-datasets)
+
+---
 
 **Project Type:** Data Analytics | Business Intelligence
 
-**Technologies:** Google Colab | Python | SQLite | SQL | Power BI
+**Tools:** Google Colab | Python | Pandas | SQLite | SQL | Power BI
